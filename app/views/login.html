@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VALL SYSTEM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/login.css">
+    <link rel="icon" type="image/png" href="../img/logo.png">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="{{url_for('home')}}">VALL SYSTEM</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Funcionalidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Experimente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nossa Equipe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre nós</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4">
+                <div class="card card-login">
+                    <div class="card-header text-center">
+                        <h4 class="card-title mb-0">Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{url_for('inicio')}}">
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" name='email' id="email" placeholder="Digite seu email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Senha:</label>
+                                <input type="password" class="form-control" name="senha" placeholder="Digite sua senha">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-login">Entrar</button>
+                        </form>
+                        {% if error_message %}
+                            <p class="text-danger text-center mt-3">{{ error_message }}</p>
+                        {% endif %}
+                        <p class="text-center mt-3">Não tem uma conta? <a href="{{url_for('cadastro')}}">Cadastre-se aqui</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer text-center">
+    <div class="container">
+        <p>&copy; 2024 VALL System. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

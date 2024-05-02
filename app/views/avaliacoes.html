@@ -1,0 +1,63 @@
+
+  
+{% extends "base_sistema.html" %}
+{% block subtitulo %} Avaliações {% endblock%}
+{% block conteudo %}
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box-header">
+        <h3 class="box-title">Lançamento de Avaliações</h3>
+      </div><!-- /.box-header -->
+      <div class="box">
+        <div class="car">
+          {% with messages = get_flashed_messages()%}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success">
+                  {{message}}                                          
+                </div>                                 
+                {% endfor %}
+             {% endif %}
+          {% endwith %}
+        </div>      
+          <div class="box-body">
+            <table id="example" class="display" style="width:100%">
+              <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nota</th>
+                    <th scope="col">Data da Avaliação</th>
+                    <th scope="col">Id Aluno</th>
+                    <th scope="col">Aluno</th>
+                    <th scope="col">Id Matéria</th>
+                    <th scope="col">Matéria</th>
+                    <th scope="col">Alterar</th>                     
+                    <th scope="col">Excluir</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for aval in avaliacao %}
+                  <tr>
+                    <td>{{aval.id}}</td>
+                    <td>{{aval.nota}}</td>
+                    <td>{{aval.data_avaliacao}}</td>
+                    <td>{{aval.id_aluno}}</td>
+                    <td>{{aval.aluno.nome}}</td>
+                    <td>{{aval.id_materia}}</td>
+                    <td>{{aval.materia.nome}}</td>
+                    <td><a href="{{url_for('atualizar_avaliacao', id=aval.id)}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a></td>
+                    <td><a href="{{url_for('excluir_avaliacao',id=aval.id)}}"><span class="label label-danger"><i class="fa-solid fa-eraser"></i> Excluir</span></a></td>
+                  </tr>
+                {% endfor %}
+               
+                           
+              </tbody>
+          </table>
+          <a href="{{url_for('inserir_avaliacao')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Lançar Nota</a>
+       </div>      
+    </div>        
+  </div>
+</section>
+{% endblock %}
+     

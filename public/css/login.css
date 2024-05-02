@@ -1,0 +1,26 @@
+body {
+    background-color: #f8f9fa;
+}
+.card-login {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    background-color: #343a40;
+    color: #ffffff;
+}
+.btn-login {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-login:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+}

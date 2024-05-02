@@ -1,0 +1,39 @@
+{% extends "base_sistema.html" %}
+{% block subtitulo %} Turmas {% endblock%}
+    {% block conteudo %}
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Atualizar Turmas</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form class="row g-3" action="{{url_for('atualizar_turma', id=turm.id)}}" method="POST" name="dados_user" onSubmit="return enviardados_user();">
+              <div class="box-body">               
+                <div class="col-md-4">
+                  <label class="form-label">Turma</label>
+                  <input class="form-control" type="text" name="turma" id="turma" value="{{turm.turma}}">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" >ID Aluno</label>
+                  <input class="form-control" type="text" name="id_aluno" value="{{turm.id_aluno}}">
+                </div>
+                <div class="col-md-12">
+                  <br>                      
+                </div>                                                         
+                <div class="col-md-12">
+                  <button class="btn btn-primary" type="submit">Alterar</button>                      
+                </div>
+                       
+            </div>
+            
+            </form>                 
+          </div><!-- /.box -->         
+        </div><!--/.col (left) -->
+        <!-- right column -->        
+      </div>   <!-- /.row -->
+    </section><!-- /.content -->
+    {% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base_sistema.html" %}
+{% block subtitulo %} Professores {% endblock%}
+    {% block conteudo %}
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Atualizar Cadastro de Professores</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form class="row g-3" action="{{url_for('atualizar_professor', id=prof.id)}}" method="POST" name="dados_user" onSubmit="return enviardados_user();">
+              <div class="box-body">               
+                <div class="col-md-4">
+                  <label class="form-label">Nome</label>
+                  <input class="form-control" type="text" name="nome" id="nome" value="{{prof.nome}}">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Email</label>
+                  <input class="form-control" type="email" name="email" value="{{prof.email}}">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" >Senha</label>
+                  <input class="form-control" type="password" name="senha" value="{{prof.senha}}">
+                </div>
+                <div class="col-md-12">
+                  <br>                      
+                </div>                                                         
+                <div class="col-md-12">
+                  <button class="btn btn-primary" type="submit">Alterar</button>                      
+                </div>
+                       
+            </div>
+            
+            </form>                 
+          </div><!-- /.box -->         
+        </div><!--/.col (left) -->
+        <!-- right column -->        
+      </div>   <!-- /.row -->
+    </section><!-- /.content -->
+    {% endblock %}

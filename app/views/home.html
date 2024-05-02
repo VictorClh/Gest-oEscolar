@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALL System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/site.css">
+    <link rel="icon" type="image/png" href="../img/logo.png">
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">VALL SYSTEM</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Funcionalidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Experimente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nossa Equipe</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre nós</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link login-link" href="{{url_for('login')}}">Login</a>
+            </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+</header>
+
+<main class="main-content">
+    <section class="carousel slide" id="myCarousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active section-hero text-center">
+                <div class="container">
+                    <h1 class="section-title">O SISTEMA DE <br><span>GESTÃO ESCOLAR</span> EFICIENTE E <br><span>SIMPLIFICADO</span></h1>
+                    <p class="section-description">Centralize a administração completa da escola em um único local, de maneira simples, rápida e eficiente.</p>
+                    <a href="#" class="btn btn-primary btn-lg">EXPERIMENTE GRÁTIS</a>
+                </div>
+            </div>
+            <div class="carousel-item section-hero text-center">
+                <div class="container">
+                    <h1 class="section-title">VALL <br><span>SYSTEM</span></h1>
+                    <p class="section-description">O Sistema de Gestão Escolar é um Software que permite à escola otimizar as rotinas pedagógicas, 
+                        financeiras e administrativas com aplicativos.</p>
+                    <a href="#" class="btn btn-primary btn-lg">BOTÃO DE AÇÃO</a>
+                </div>
+            </div>
+            <!-- Outros slides aqui, se houver -->
+        </div>
+        <!-- Controles de navegação -->
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </section>  
+
+    <section class="section-features bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Administrativo</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Comunicação Integrada</h5>
+                            <p class="card-text">Mantenha pais, alunos e professores conectados em uma plataforma intuitiva.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Gestor</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Gestão Simplificada</h5>
+                            <p class="card-text">Automatize tarefas administrativas e simplifique processos burocráticos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Educacional</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Aprendizado Eficiente</h5>
+                            <p class="card-text">Promova um ambiente de aprendizado colaborativo e inovador.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section-testimonials text-center">
+        <div class="container">
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="testimonial">
+                        <p class="testimonial-text">Com o VALL System, conseguimos melhorar significativamente nossa comunicação com os pais e a gestão escolar como um todo.</p>
+                        <p class="testimonial-author">- Maria Silva, Diretora Escolar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-contact text-center">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-description">Estamos aqui para ajudar. Entre em contato conosco para saber mais sobre como o VALL System pode beneficiar sua instituição de ensino.</p>
+            <a href="#" class="btn btn-primary btn-lg">FALE CONOSCO</a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer text-center">
+    <div class="container">
+        <p>&copy; 2024 VALL System. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

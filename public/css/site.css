@@ -1,0 +1,155 @@
+/* Adicione estilos conforme necessário */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.section-hero {
+    padding: 100px 0;
+    color: #ffffff;
+    background-image: linear-gradient(to right, rgba(52, 58, 64, 0.9), rgba(52, 58, 64, 0.9)), url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.section-hero .section-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.section-hero .section-description {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.section-features {
+    padding: 80px 0;
+}
+
+.feature {
+    margin-bottom: 40px;
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.feature-description {
+    font-size: 16px;
+}
+
+.section-testimonials {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.section-contact {
+    padding: 100px 0;
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.section-contact .btn-primary {
+    margin-top: 20px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        padding: 10px 15px;
+    }
+}
+.login-link {
+    /* Estilos específicos para o link de login */
+    color: #3B85FF; /* Cor laranja */
+    font-weight: bold;
+}
+/*estilizar diretamente o item "Login" no CSS, sem a necessidade de adicionar uma classe personalizada. Por exemplo:*/
+
+.nav-item:nth-last-child(1) .nav-link {
+    /*Estilos específicos para o link de login*/ 
+    color: #3B85FF;  /*Cor laranja*/ 
+    font-weight: bold;
+}
+
+/* Estilo para a seção de recursos */
+.section-features {
+    padding: 80px 0; /* Adiciona um espaçamento interno de 80px na parte superior e inferior */
+}
+
+/* Estilo para os cartões */
+.card {
+    border: none; /* Remove a borda padrão dos cartões */
+    border-radius: 10px; /* Adiciona cantos arredondados aos cartões */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil aos cartões */
+}
+
+.card-header {
+    background-color: #007bff; /* Cor de fundo para o cabeçalho dos cartões */
+    color: #fff; /* Cor do texto no cabeçalho dos cartões */
+    border-radius: 10px 10px 0 0; /* Adiciona cantos arredondados apenas ao topo do cabeçalho */
+}
+
+.card-body {
+    padding: 20px; /* Adiciona um espaçamento interno de 20px ao corpo dos cartões */
+}
+
+.card-title {
+    font-weight: bold; /* Define a fonte em negrito para o título dos cartões */
+}
+
+.card-text {
+    color: #6c757d; /* Define a cor do texto do corpo dos cartões */
+}
+
