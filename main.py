@@ -4,7 +4,7 @@ from app import create_app
 from flask_jwt_extended import JWTManager
 from blacklist import BLACKLIST
 from app.recursos import User_modelo, Users_modelo
-
+# Teste GitHub
 app = create_app()
 api = Api(app)
 jwt = JWTManager(app)
