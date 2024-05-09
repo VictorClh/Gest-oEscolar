@@ -18,32 +18,36 @@ def init_app(app):
     
     @app.route("/login", methods=["GET", "POST"])
     def login():
-        if request.method == "POST":
-            email = request.form["email"]
-            senha = request.form["senha"]
-        
-        # Consulte o banco de dados para verificar se o usuário existe e as credenciais estão corretas
-            with app.app_context():
-                professor = Professores.query.filter_by(email=email, senha=senha).first()
+        form = LoginForm()
 
-            if professor:
-            # Se as credenciais estiverem corretas, redirecione para a página inicial
-                return redirect(url_for("inicio"))
-            else:
-            # Se as credenciais estiverem incorretas, exiba uma mensagem de erro
-                error_message = "Credenciais inválidas. Por favor, tente novamente."
-                return render_template("login.html", error_message=error_message)
-    
-    # Se o método for GET, exiba o formulário de login
+        if form.validate_on_submit():
+            user = Professores.query.filter_br(email=form.email.data).first()
+
+            if not user:
+                flash("Email do usuario incorreto, por favor verifique!")
+                return redirect(url_for("login"))
+            
+            elif not check_password_hash(user.senha, form.senha.data):
+                flash("Senha de usuario incorreto!")
+                return redirect(url_for("login"))
+            
+            login_user(user, remember=form.remember.data, duration=timedelta(days=7))
+            return redirect(url_for("login"))
+        
         return render_template("login.html")
         
+    @app.route("/logout")
+    def logout():        
+        logout_user()
+        return render_template("/login.html")
     
     @app.route("/cadastro")
     def cadastro():        
         return render_template("/cadastrar.html")
 
-        
+      
     @app.route("/inicio")
+    @login_required  
     def inicio():        
         professores = Professores.query.order_by(Professores.id).all()
         return render_template("/inicio.html", professores=professores) 

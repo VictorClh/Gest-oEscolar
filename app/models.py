@@ -16,7 +16,15 @@ class Professores(db.Model, UserMixin):
     data = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     #materias = db.relationship('Materias', backref='professor', lazy=True)
     #turmas = db.relationship('Turmas', secondary=Turmas_Professores.__table__, backref=db.backref('professores', lazy=True))
-
+    def json(self):
+        return { 
+                'id': self.id, 
+                'nome': self.nome,
+                'email': self.email,
+                'cpf': self.cpf,
+                'senha': self.senha
+                
+        }
 class Alunos(db.Model):
     __tablename__ = "alunos"
     id = db.Column(db.Integer, primary_key=True)
