@@ -34,6 +34,15 @@ class Alunos(db.Model):
     id_responsavel = db.Column(db.Integer, db.ForeignKey('responsavel_aluno.id'), nullable=True)
     data_cadastro = db.Column(db.DateTime, default=db.func.current_timestamp())
     responsavel = db.relationship('Responsavel_Aluno', backref='aluno')
+    def json(self):
+        return { 
+                'id': self.id, 
+                'nome': self.nome,
+                'data_nasc': self.data_nasc,
+                'cpf': self.cpf,
+                'id_responsavel': self.id_responsavel
+                
+        }
 
 class Responsavel_Aluno(db.Model):
     __tablename__ = "responsavel_aluno"
@@ -41,6 +50,14 @@ class Responsavel_Aluno(db.Model):
     nome = db.Column(db.String(255), nullable=False)
     cpf = db.Column(db.String(255), nullable=False)
     fone = db.Column(db.String(20), nullable=False)
+    def json(self):
+        return { 
+                'id': self.id, 
+                'nome': self.nome,
+                'cpf': self.cpf,
+                'fone': self.fone
+                
+        }
 
 class Materias(db.Model):
     __tablename__ = 'materias'

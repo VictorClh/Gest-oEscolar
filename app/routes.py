@@ -47,7 +47,7 @@ def init_app(app):
 
       
     @app.route("/inicio")
-    @login_required  
+    #@login_required  
     def inicio():        
         professores = Professores.query.order_by(Professores.id).all()
         return render_template("/inicio.html", professores=professores) 
