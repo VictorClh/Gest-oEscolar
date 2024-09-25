@@ -36,7 +36,6 @@ class Professores_model(Resource):
     argumentos.add_argument('senha')
 
 
-    #@jwt_required()
     def get(self, id):
         professores = Professores.query.filter_by(id=id).first()
         if professores:
